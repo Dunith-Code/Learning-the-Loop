@@ -29,8 +29,8 @@ Every article follows the same rule: **no hand-drawn results**. Each number, fig
 |---|---------|-------|------|
 | 101 | [What Is Machine Learning, Really?](https://medium.com/@Dunith-Write/learning-the-loop-101-what-is-machine-learning-really-aac03c3e1268) | The core idea of ML | — |
 | 102 | [The Types of Machine Learning](https://medium.com/@Dunith-Write/learning-the-loop-102-the-types-of-machine-learning-and-why-the-distinction-actually-matters-cfd7a61a22d8) | Supervised, unsupervised, reinforcement | — |
-| 103 | [How Does a Model Actually Learn?](https://medium.com/@Dunith-Write/learning-the-loop-103-how-does-a-model-actually-learn-loss-functions-gradient-descent-0e3612e3b761) | Loss functions & gradient descent | [`103/`](./103) |
-| 104 | [Overfitting vs. Underfitting](https://medium.com/@Dunith-Write) <!-- replace with the article link --> | Why memorizing isn't learning | [`104/`](./104) |
+| 103 | [How Does a Model Actually Learn?](https://medium.com/@Dunith-Write/learning-the-loop-103-how-does-a-model-actually-learn-loss-functions-gradient-descent-0e3612e3b761) | Loss functions & gradient descent | [`103`](https://github.com/Dunith-Code/Learning-the-Loop) |
+| 104 | [Overfitting vs. Underfitting](https://medium.com/@Dunith-Write/learning-the-loop-104-overfitting-vs-underfitting-why-memorizing-isnt-learning-8a6d6038020c?sharedUserId=Dunith-Write) <!-- replace with the article link --> | Why memorizing isn't learning | [`104`](https://github.com/Dunith-Code/Learning-the-Loop) |
 
 > 🔜 **Coming next:** #105 K-Nearest Neighbors on the Iris dataset.
 
