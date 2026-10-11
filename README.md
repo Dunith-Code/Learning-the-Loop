@@ -19,18 +19,18 @@
 
 The idea behind the name: almost every ML algorithm runs the same loop, **predict → measure error → adjust → repeat**. This series unpacks that loop one concept at a time.
 
-Every article follows the same rule: **no hand-drawn results**. Each number, figure and table in the articles comes from code in this repository, so you can run it and check it yourself.
+From #103 onward, every number, figure and table in the articles is produced by the companion notebook in this repository, so you can run it and check it yourself.
 
 ---
 
-## 🗂️ Articles & code
+## 🗂️ Articles & notebooks
 
-| # | Article | Topic | Code |
-|---|---------|-------|------|
+| # | Article | Topic | Notebook |
+|---|---------|-------|----------|
 | 101 | [What Is Machine Learning, Really?](https://medium.com/@Dunith-Write/learning-the-loop-101-what-is-machine-learning-really-aac03c3e1268) | The core idea of ML | — |
 | 102 | [The Types of Machine Learning](https://medium.com/@Dunith-Write/learning-the-loop-102-the-types-of-machine-learning-and-why-the-distinction-actually-matters-cfd7a61a22d8) | Supervised, unsupervised, reinforcement | — |
-| 103 | [How Does a Model Actually Learn?](https://medium.com/@Dunith-Write/learning-the-loop-103-how-does-a-model-actually-learn-loss-functions-gradient-descent-0e3612e3b761) | Loss functions & gradient descent | [`103`](https://github.com/Dunith-Code/Learning-the-Loop) |
-| 104 | [Overfitting vs. Underfitting](https://medium.com/@Dunith-Write/learning-the-loop-104-overfitting-vs-underfitting-why-memorizing-isnt-learning-8a6d6038020c?sharedUserId=Dunith-Write) <!-- replace with the article link --> | Why memorizing isn't learning | [`104`](https://github.com/Dunith-Code/Learning-the-Loop) |
+| 103 | [How Does a Model Actually Learn?](https://medium.com/@Dunith-Write/learning-the-loop-103-how-does-a-model-actually-learn-loss-functions-gradient-descent-0e3612e3b761) | Loss functions & gradient descent | [`learning_the_loop_103_practical.ipynb`](./learning_the_loop_103_practical.ipynb) |
+| 104 | [Overfitting vs. Underfitting](https://medium.com/@Dunith-Write/learning-the-loop-104-overfitting-vs-underfitting-why-memorizing-isnt-learning-8a6d6038020c?sharedUserId=Dunith-Write) | Why memorizing isn't learning | [`learning_the_loop_104_practical.ipynb`](./learning_the_loop_104_practical.ipynb) |
 
 > 🔜 **Coming next:** #105 K-Nearest Neighbors on the Iris dataset.
 
@@ -52,27 +52,29 @@ Every article follows the same rule: **no hand-drawn results**. Each number, fig
 
 ```
 Learning-the-Loop/
-├── 103/
-│   └── learning_the_loop_103_practical.ipynb   # Loss functions & gradient descent
-├── 104/
-│   ├── learning_the_loop_104_practical.ipynb   # Companion notebook
-│   ├── experiments.py                          # Runs the experiments, writes results_104.json
-│   └── figures.py                              # Builds the figures & tables from the results
-├── requirements.txt
+├── learning_the_loop_103_practical.ipynb   # Loss functions & gradient descent
+├── learning_the_loop_104_practical.ipynb   # Overfitting vs. underfitting
 └── README.md
 ```
+
+Each notebook is self-contained: it loads its own data, runs the experiments, and draws the figures.
 
 ---
 
 ## 🚀 Getting started
 
-### 1️⃣ Clone the repository
+### ☁️ Option 1: Google Colab (no setup)
+Open a notebook from this repository on GitHub, then click **Open in Colab**. Or paste the notebook's GitHub URL into [colab.research.google.com](https://colab.research.google.com) (File → Open notebook → GitHub tab). Then run all cells from top to bottom.
+
+### 💻 Option 2: Run locally
+
+**1️⃣ Clone the repository**
 ```bash
 git clone https://github.com/Dunith-Code/Learning-the-Loop.git
 cd Learning-the-Loop
 ```
 
-### 2️⃣ Create a virtual environment (recommended)
+**2️⃣ Create a virtual environment (recommended)**
 ```bash
 python -m venv .venv
 
@@ -83,37 +85,24 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3️⃣ Install dependencies
-```bash
-python -m pip install -r requirements.txt
-```
-or directly:
+**3️⃣ Install dependencies**
 ```bash
 python -m pip install numpy matplotlib scikit-learn jupyter
 ```
 
-### 4️⃣ Run an article's code
-
-**Option A: notebook** (recommended)
+**4️⃣ Launch Jupyter and open a notebook**
 ```bash
 jupyter notebook
 ```
-Open the notebook in the article's folder and run the cells top to bottom. You can also open it in **Google Colab**.
-
-**Option B: scripts** (example for #104)
-```bash
-cd 104
-python experiments.py   # run first: creates results_104.json
-python figures.py       # then: creates the figures and tables
-```
+Run the cells top to bottom. #104 repeats its experiments over 200 random splits, so that notebook takes a little longer to finish.
 
 ---
 
 ## 🔬 Reproducibility
 
-- 📊 **Real datasets only** (from `scikit-learn`: the diabetes, wine and iris datasets)
+- 📊 **Real datasets**, loaded from `scikit-learn` (the diabetes dataset in #103 and #104)
 - 🎲 **Fixed seeds**: the only randomness is the train/test split seeds, so reruns give the same numbers
-- 🧮 **Median over many splits** where a single split could be misleading (#104 uses 200)
+- 🧮 **Medians over many splits** where a single split could mislead (#104 uses 200)
 - 🚫 **If your numbers differ from the article's:** that's a real bug worth reporting.
 
 ---
